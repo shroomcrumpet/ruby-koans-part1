@@ -57,86 +57,88 @@ class AboutControlStatements < Neo::Koan
     assert_equal __, result
   end
 
-  def test_unless_statement
-    result = :default_value
-    unless false    # same as saying 'if !false', which evaluates as 'if true'
-      result = :false_value
-    end
-    assert_equal __, result
-  end
+  # UNCOMMENT THIS LATER
 
-  def test_unless_statement_evaluate_true
-    result = :default_value
-    unless true    # same as saying 'if !true', which evaluates as 'if false'
-      result = :true_value
-    end
-    assert_equal __, result
-  end
+  # def test_unless_statement
+  #   result = :default_value
+  #   unless false    # same as saying 'if !false', which evaluates as 'if true'
+  #     result = :false_value
+  #   end
+  #   assert_equal __, result
+  # end
 
-  def test_unless_statement_modifier
-    result = :default_value
-    result = :false_value unless false
+  # def test_unless_statement_evaluate_true
+  #   result = :default_value
+  #   unless true    # same as saying 'if !true', which evaluates as 'if false'
+  #     result = :true_value
+  #   end
+  #   assert_equal __, result
+  # end
 
-    assert_equal __, result
-  end
+  # def test_unless_statement_modifier
+  #   result = :default_value
+  #   result = :false_value unless false
 
-  def test_while_statement
-    i = 1
-    result = 1
-    while i <= 10
-      result = result * i
-      i += 1
-    end
-    assert_equal __, result
-  end
+  #   assert_equal __, result
+  # end
 
-  def test_break_statement
-    i = 1
-    result = 1
-    while true
-      break unless i <= 10
-      result = result * i
-      i += 1
-    end
-    assert_equal __, result
-  end
+  # def test_while_statement
+  #   i = 1
+  #   result = 1
+  #   while i <= 10
+  #     result = result * i
+  #     i += 1
+  #   end
+  #   assert_equal __, result
+  # end
 
-  def test_break_statement_returns_values
-    i = 1
-    result = while i <= 10
-      break i if i % 2 == 0
-      i += 1
-    end
+  # def test_break_statement
+  #   i = 1
+  #   result = 1
+  #   while true
+  #     break unless i <= 10
+  #     result = result * i
+  #     i += 1
+  #   end
+  #   assert_equal __, result
+  # end
 
-    assert_equal __, result
-  end
+  # def test_break_statement_returns_values
+  #   i = 1
+  #   result = while i <= 10
+  #     break i if i % 2 == 0
+  #     i += 1
+  #   end
 
-  def test_next_statement
-    i = 0
-    result = []
-    while i < 10
-      i += 1
-      next if (i % 2) == 0
-      result << i
-    end
-    assert_equal __, result
-  end
+  #   assert_equal __, result
+  # end
 
-  def test_for_statement
-    array = ["fish", "and", "chips"]
-    result = []
-    for item in array
-      result << item.upcase
-    end
-    assert_equal [__, __, __], result
-  end
+  # def test_next_statement
+  #   i = 0
+  #   result = []
+  #   while i < 10
+  #     i += 1
+  #     next if (i % 2) == 0
+  #     result << i
+  #   end
+  #   assert_equal __, result
+  # end
 
-  def test_times_statement
-    sum = 0
-    10.times do
-      sum += 1
-    end
-    assert_equal __, sum
-  end
+  # def test_for_statement
+  #   array = ["fish", "and", "chips"]
+  #   result = []
+  #   for item in array
+  #     result << item.upcase
+  #   end
+  #   assert_equal [__, __, __], result
+  # end
+
+  # def test_times_statement
+  #   sum = 0
+  #   10.times do
+  #     sum += 1
+  #   end
+  #   assert_equal __, sum
+  # end
 
 end
