@@ -2,8 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutIteration < Neo::Koan
 
-   def test_each_is_a_method_on_arrays
-    assert_equal __, [].methods.include?(as_name(:each))
+  def test_each_is_a_method_on_arrays
+    assert_equal __, [].methods.include?(:each)
   end
 
   def test_iterating_with_each
@@ -33,7 +33,9 @@ class AboutIteration < Neo::Koan
   end
 
   def test_map_transforms_elements_of_an_array
+
     # NOTE: 'map' is another name for the 'collect' operation
+    array = [1, 2, 3, 4, 5, 6]
     another_array = array.map { |item| item + 10 }
     assert_equal __, another_array
   end

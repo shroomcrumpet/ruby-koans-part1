@@ -30,18 +30,18 @@ class AboutBlocks < Neo::Koan
 
   # ------------------------------------------------------------------
 
-  def many_yields
-    yield(:peanut)
-    yield(:butter)
-    yield(:and)
-    yield(:jelly)
-  end
+  # def many_yields
+  #   yield(:peanut)
+  #   yield(:butter)
+  #   yield(:and)
+  #   yield(:jelly)
+  # end
 
-  def test_methods_can_call_yield_many_times
-    result = []
-    many_yields { |item| result << item }
-    assert_equal __, result
-  end
+  # def test_methods_can_call_yield_many_times
+  #   result = []
+  #   many_yields { |item| result << item }
+  #   assert_equal __, result
+  # end
 
   # ------------------------------------------------------------------
 
@@ -66,31 +66,31 @@ class AboutBlocks < Neo::Koan
     assert_equal __, value
   end
 
-  def test_blocks_can_be_assigned_to_variables_and_called_explicitly
-    add_one = lambda { |n| n + 1 }
-    assert_equal __, add_one.call(10)
+  # def test_blocks_can_be_assigned_to_variables_and_called_explicitly
+  #   add_one = lambda { |n| n + 1 }
+  #   assert_equal __, add_one.call(10)
 
-    # Alternative calling syntax
-    assert_equal __, add_one[10]
-  end
+  #   # Alternative calling syntax
+  #   assert_equal __, add_one[10]
+  # end
 
-  def test_stand_alone_blocks_can_be_passed_to_methods_expecting_blocks
-    make_upper = lambda { |n| n.upcase }
-    result = method_with_block_arguments(&make_upper)
-    assert_equal __, result
-  end
+  # def test_stand_alone_blocks_can_be_passed_to_methods_expecting_blocks
+  #   make_upper = lambda { |n| n.upcase }
+  #   result = method_with_block_arguments(&make_upper)
+  #   assert_equal __, result
+  # end
 
   # ------------------------------------------------------------------
 
-  def method_with_explicit_block(&block)
-    block.call(10)
-  end
+  # def method_with_explicit_block(&block)
+  #   block.call(10)
+  # end
 
-  def test_methods_can_take_an_explicit_block_argument
-    assert_equal __, method_with_explicit_block { |n| n * 2 }
+  # def test_methods_can_take_an_explicit_block_argument
+  #   assert_equal __, method_with_explicit_block { |n| n * 2 }
 
-    add_one = lambda { |n| n + 1 }
-    assert_equal __, method_with_explicit_block(&add_one)
-  end
+  #   add_one = lambda { |n| n + 1 }
+  #   assert_equal __, method_with_explicit_block(&add_one)
+  # end
 
 end
