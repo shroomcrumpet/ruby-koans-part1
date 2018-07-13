@@ -32,63 +32,63 @@ class AboutMethods < Neo::Koan
 
   # NOTE: wrong number of arguments is not a SYNTAX error, but a
   # runtime error.
-  def test_calling_global_methods_with_wrong_number_of_arguments
-    exception = assert_raise(___) do
-      my_global_method
-    end
-    assert_match(/__/, exception.message)
+  # def test_calling_global_methods_with_wrong_number_of_arguments
+  #   exception = assert_raise(___) do
+  #     my_global_method
+  #   end
+  #   assert_match(/__/, exception.message)
 
-    exception = assert_raise(___) do
-      my_global_method(1,2,3)
-    end
-    assert_match(/__/, exception.message)
-  end
+  #   exception = assert_raise(___) do
+  #     my_global_method(1,2,3)
+  #   end
+  #   assert_match(/__/, exception.message)
+  # end
 
-  # ------------------------------------------------------------------
+  # # ------------------------------------------------------------------
 
-  def method_with_defaults(a, b=:default_value)
-    [a, b]
-  end
+  # def method_with_defaults(a, b=:default_value)
+  #   [a, b]
+  # end
 
-  def test_calling_with_default_values
-    assert_equal [1, __], method_with_defaults(1)
-    assert_equal [1, __], method_with_defaults(1, 2)
-  end
+  # def test_calling_with_default_values
+  #   assert_equal [1, __], method_with_defaults(1)
+  #   assert_equal [1, __], method_with_defaults(1, 2)
+  # end
 
-  # ------------------------------------------------------------------
+  # # ------------------------------------------------------------------
 
-  def method_with_var_args(*args)
-    args
-  end
+  # def method_with_var_args(*args)
+  #   args
+  # end
 
-  def test_calling_with_variable_arguments
-    assert_equal __, method_with_var_args.class
-    assert_equal __, method_with_var_args
-    assert_equal __, method_with_var_args(:one)
-    assert_equal __, method_with_var_args(:one, :two)
-  end
+  # def test_calling_with_variable_arguments
+  #   assert_equal __, method_with_var_args.class
+  #   assert_equal __, method_with_var_args
+  #   assert_equal __, method_with_var_args(:one)
+  #   assert_equal __, method_with_var_args(:one, :two)
+  # end
 
-  # ------------------------------------------------------------------
+  # # ------------------------------------------------------------------
 
-  def method_with_explicit_return
-    :a_non_return_value
-    return :return_value
-    :another_non_return_value
-  end
+  # def method_with_explicit_return
+  #   :a_non_return_value
+  #   return :return_value
+  #   :another_non_return_value
+  # end
 
-  def test_method_with_explicit_return
-    assert_equal __, method_with_explicit_return
-  end
+  # def test_method_with_explicit_return
+  #   assert_equal __, method_with_explicit_return
+  # end
 
-  # ------------------------------------------------------------------
+  # # ------------------------------------------------------------------
 
-  def method_without_explicit_return
-    :a_non_return_value
-    :return_value
-  end
+  # def method_without_explicit_return
+  #   :a_non_return_value
+  #   :return_value
+  # end
 
-  def test_method_without_explicit_return
-    assert_equal __, method_without_explicit_return
-  end
+  # def test_method_without_explicit_return
+  #   assert_equal __, method_without_explicit_return
+  # end
 
 end

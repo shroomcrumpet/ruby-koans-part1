@@ -2,6 +2,7 @@
 
 $LOAD_PATH << File.dirname(__FILE__)
 
+# part 1
 require 'about_asserts'
 require 'about_nil'
 #require 'about_objects'
@@ -12,6 +13,8 @@ require 'about_strings'
 require 'about_symbols'
 require 'about_methods'
 require 'about_keyword_arguments'
+
+# part 2
 require 'about_control_statements'
 require 'about_true_and_false'
 require 'about_triangle_project'
